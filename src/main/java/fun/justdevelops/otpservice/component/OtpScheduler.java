@@ -20,7 +20,7 @@ public class OtpScheduler {
         this.otpConfigRepo = otpConfigRepo;
     }
 
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 120000)
     public void refreshOtpStates() {
         if (otpConfigRepo.findById(0).isPresent()) {
             var otpConfig = otpConfigRepo.findById(0).get();
